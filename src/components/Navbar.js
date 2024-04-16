@@ -1,61 +1,100 @@
-import search from "../assets/navbar/search.png";
-import burger from "../assets/navbar/burger-bar.png";
-import circle from "../assets/actor/circle.png";
 import { useState } from "react";
-import "./navbar.css"
-const Navbar = () => {
-  const [burgers, setBurgers] = useState(true);
-  const handleBurger = () => {
-    setBurgers(!burgers);
+import { FaSearch } from "react-icons/fa";
+import { GiHamburgerMenu } from "react-icons/gi";
+import { IoCloseSharp } from "react-icons/io5";
+
+export default function Navbar() {
+  const [isClick, setIsClick] = useState(false);
+  const [isBurgerOpen, setIsBurgerOpen] = useState(false);
+  const handleClick = () => {
+    setIsClick(!isClick);
   };
+  const handleBurgerOpen = () => {
+    setIsBurgerOpen(!isBurgerOpen);
+  };
+
   return (
-    <div>
-      <div className="flex flex-row p-3 items-center justify-between">
-        <div className="md:hidden">
-          <img className="w-7 cursor-pointer" src={search} alt="" />
+    <div className="flex flex-col relative">
+      <nav className="flex justify-between m-5">
+        <div className="flex justify-between items-center cursor-pointer ">
+          <div
+            id="logo"
+            className="text-secondary text-2xl pl-5  cursor-pointer lg:pr-36"
+          >
+            M&M's
+          </div>
+
+          <ul className="hidden lg:flex justify-between w-96 text-2xl">
+            <li className="cursor-pointer  hover:text-secondary hover:scale-110 hover:transition-all">
+              Home
+            </li>
+            <li className="cursor-pointer  hover:text-secondary hover:scale-110 hover:transition-all">
+              Actors
+            </li>
+            <li className="cursor-pointer  hover:text-secondary hover:scale-110 hover:transition-all">
+              About
+            </li>
+            <li className="cursor-pointer  hover:text-secondary hover:scale-110 hover:transition-all">
+              Favorites
+            </li>
+          </ul>
         </div>
-        <div className="cursor-pointer lg:mr-20">
-          <span className="text-secondary text-3xl lg:text-5xl">m</span>
-          <span className="text-white text-sm lg:text-md">&</span>
-          <span className="text-secondary text-3xl lg:text-5xl">m</span>
-          <span className="text-white text-md lg:text-lg">'s</span>
+        <div className="flex gap-10 items-center justify-center ">
+          <div className="flex gap-7 justify-center items-center">
+            {isClick && (
+              <input
+                id="search"
+                type="search"
+                className="w-40 lg:cursor-pointer lg:w-72 h-10 bg-slate-700 focus:bg-slate-600 focus:outline-none rounded-2xl pl-5 "
+                placeholder="Search"
+              />
+            )}
+
+            <FaSearch
+              className=" cursor-pointer h-auto w-6 hover:scale-110 hover:transition-all "
+              onClick={handleClick}
+            />
+            <div className="cursor-pointer bg-secondary items-center rounded-full w-14 h-14"></div>
+            {isBurgerOpen ? (
+              <GiHamburgerMenu
+                onClick={handleBurgerOpen}
+                className="cursor-pointer text-2xl hover:text-secondary hover:scale-110 hover:transition-all lg:hidden"
+              />
+            ) : null}
+          </div>
         </div>
-        <div className="hidden lg:flex flex-row text-white gap-x-14 text-2xl nav">
-          <p className="hover:text-secondary cursor-pointer">Home</p>
-          <p className="hover:text-secondary cursor-pointer">Movies</p>
-          <p className="hover:text-secondary cursor-pointer">Actors</p>
-          <p className="hover:text-secondary cursor-pointer">Favorites</p>
-          <p className="hover:text-secondary cursor-pointer">About</p>
+      </nav>
+
+      {isBurgerOpen ? null : (
+        <div
+          id="nav-burger"
+          className="absolute  flex flex-col  w-96 bg-slate-800  h-screen justify-around items-center self-end lg:hidden"
+        >
+          <div className="mt-3 mb-72 mr-80">
+            <IoCloseSharp
+              onClick={handleBurgerOpen}
+              className="cursor-pointer text-3xl hover:text-secondary hover:scale-110 hover:transition-all lg:hidden"
+            />
+          </div>
+          <ul className="flex flex-col justify-center items-center text-2xl mb-[600px]   ">
+            <li className="flex justify-center items-center  cursor-pointer h-16 w-[350px] hover:bg-gray-900   hover:text-secondary hover:scale-110 hover:transition-all">
+              Home
+            </li>
+
+            <li className="flex justify-center items-center  cursor-pointer h-16 w-[350px] hover:bg-gray-900 hover:text-secondary hover:scale-110 hover:transition-all">
+              Actors
+            </li>
+
+            <li className="flex justify-center items-center  cursor-pointer h-16 w-[350px] hover:bg-gray-900     hover:text-secondary hover:scale-110 hover:transition-all">
+              About
+            </li>
+
+            <li className="flex justify-center items-center  cursor-pointer h-16 w-[350px] hover:bg-gray-900   hover:text-secondary hover:scale-110 hover:transition-all">
+              Favorites
+            </li>
+          </ul>
         </div>
-        <div className="hidden lg:flex justify-end cursor-pointer">
-          <img className="w-10 " src={search} alt="" />
-        </div>
-        <div className="hidden lg:flex">
-          <img className="w-10 h-10" src={circle} alt="" />
-        </div>
-        <div className="md:hidden">
-          <img
-            onClick={handleBurger}
-            className={`${
-              burgers ? "rotate-0 transition-all" : "-rotate-90 transition-all"
-            } w-7 cursor-pointer`}
-            src={burger}
-            alt=""
-          />
-        </div>
-      </div>
-      <div
-        className={`${
-          burgers ? "hidden" : ""
-        } absolute w-64 h-screen bg-primary right-0 divide-solid divide-y-2 divide-white opacity-90 flex flex-col `}
-      >
-        <p className="text-center text-white py-5">Movies</p>
-        <p className="text-center text-white py-5">Favorites</p>
-        <p className="text-center text-white py-5">Actors</p>
-        <p className="text-center text-white py-5">About</p>
-      </div>
+      )}
     </div>
   );
-};
-
-export default Navbar;
+}

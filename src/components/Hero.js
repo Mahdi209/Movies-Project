@@ -1,25 +1,30 @@
-import movie from "../assets/hero/oppenheimer.png";
 import start from "../assets/hero/play-button.png";
+import { useSelector } from "react-redux";
+
 const Hero = () => {
+  const movies = useSelector((state) => state.popular);
+  const heroMovie = movies.filter(
+    (movie) => movie.title === "Kung Fu Panda 4"
+  )[0];
   return (
     <div className="flex md:flex-row-reverse gap-x-5 md:px-5">
-      <div id="right" className="w-full md:w-">
-        <img className="w-full md:h-3/4 p-3 md:p-auto rounded-xl" src={movie} alt="movie" />
+      <div id="right" className="w-full ">
+        <img
+          src={`https://image.tmdb.org/t/p/original/${heroMovie?.backdrop_path}`}
+          alt={heroMovie?.title}
+        />
       </div>
-      <div
-        id="left"
-        className="w-3/6 hidden md:flex flex-col px-3"
-      >
+      <div id="left" className="w-3/6 hidden md:flex flex-col px-3">
         {/* title */}
         <div>
-          <p className="text-white text-7xl font-serif py-10">Oppenheimer</p>
+          <p className="text-white text-7xl font-serif py-10">
+            {heroMovie?.title}
+          </p>
         </div>
         {/* description */}
         <div>
           <p className="text-white text-3xl leading-normal">
-            Lorem Ipsum is simply dummy text of the printing and typesetting
-            industry. Lorem Ipsum has been the industry's standard dummy text
-            ever since the 1500s,
+            {heroMovie?.overview}
           </p>
         </div>
         {/* buttons */}
