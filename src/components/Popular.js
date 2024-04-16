@@ -1,4 +1,5 @@
 import { useSelector } from "react-redux";
+import MovieCard from "./MovieCard";
 
 const Popular = () => {
   const movies = useSelector((state) => state.popular);
@@ -13,16 +14,7 @@ const Popular = () => {
           <div className="overflow-x-auto whitespace-no-wrap ml-[5%] mr-[5%]">
             <div className="flex flex-no-wrap">
               {movies.map((movie) => (
-                <div className="flex-shrink-0">
-                  <img
-                    src={`https://image.tmdb.org/t/p/original/${movie.backdrop_path}`}
-                    alt={movie.title}
-                    className=" w-36 lg:w-96 h-auto bg-gray-200 mr-16 hover:opacity-55 hover:transition-all"
-                  />
-                  <span className="text-white text-[9px] lg:text-xl">
-                    {movie.title}
-                  </span>
-                </div>
+                <MovieCard movie={movie} />
               ))}
             </div>
           </div>

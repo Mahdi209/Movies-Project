@@ -6,6 +6,7 @@ import Home from "./pages/Home";
 import Navbar from "./components/Navbar";
 import { Routes, Route } from "react-router-dom";
 import MoviesPage from "./pages/MoviesPage";
+import Movie from "./pages/Movie";
 
 function App() {
   const dispatch = useDispatch();
@@ -21,6 +22,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/movies" element={<MoviesPage />} />
+        <Route path="/movies/:id" element={<Movie />} />
       </Routes>
     </div>
   );

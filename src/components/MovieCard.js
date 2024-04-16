@@ -1,17 +1,16 @@
-import dune from "../assets/actor/dune.webp";
-const MoviePage = () => {
+import { Link } from "react-router-dom";
+
+const MovieCard = ({ movie }) => {
   return (
-    <div>
-      <div>
-        <div>
-          <p className="text-white p-3 md:pb-10 md:text-6xl">Popular</p>
-        </div>
-        <div className="flex flex-row gap-2 items-center justify-center ">
-          <img className="w-24 md:w-56" src={dune} alt="" />
-        </div>
-      </div>
-    </div>
+    <Link className="flex-shrink-0" to={`/movies/${movie.id}`}>
+      <img
+        src={`https://image.tmdb.org/t/p/original/${movie.backdrop_path}`}
+        alt={movie.title}
+        className=" w-36 lg:w-96 h-auto bg-gray-200 mr-16 hover:opacity-55 hover:transition-all"
+      />
+      <span className="text-white  text-[9px] lg:text-xl">{movie.title}</span>
+    </Link>
   );
 };
 
-export default Popular;
+export default MovieCard;
