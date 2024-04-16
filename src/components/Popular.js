@@ -3,6 +3,7 @@ const Popular = () => {
   return (
     <div>
       <div>
+        
         <div>
           <p className="text-white p-3 md:pb-10 md:text-6xl">Popular</p>
         </div>
