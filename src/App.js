@@ -4,6 +4,8 @@ import { getPopularData, getTrendingData } from "./rootStore/getApiData";
 import "./App.css";
 import Home from "./pages/Home";
 import Navbar from "./components/Navbar";
+import { Routes, Route } from "react-router-dom";
+import MoviesPage from "./pages/MoviesPage";
 
 function App() {
   const dispatch = useDispatch();
@@ -16,7 +18,10 @@ function App() {
   return (
     <div>
       <Navbar />
-      <Home />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/movies" element={<MoviesPage />} />
+      </Routes>
     </div>
   );
 }

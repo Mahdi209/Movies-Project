@@ -1,5 +1,5 @@
-import start from "../assets/hero/play-button.png";
 import { useSelector } from "react-redux";
+import { FaPlay } from "react-icons/fa";
 
 const Hero = () => {
   const movies = useSelector((state) => state.popular);
@@ -7,30 +7,31 @@ const Hero = () => {
     (movie) => movie.title === "Kung Fu Panda 4"
   )[0];
   return (
-    <div className="flex md:flex-row-reverse gap-x-5 md:px-5">
-      <div id="right" className="w-full ">
+    <div className="flex md:flex-row-reverse  gap-x-5 md:px-5">
+      <div id="right" className="w-full">
         <img
+          className=""
           src={`https://image.tmdb.org/t/p/original/${heroMovie?.backdrop_path}`}
           alt={heroMovie?.title}
         />
       </div>
-      <div id="left" className="w-3/6 hidden md:flex flex-col px-3">
+      <div id="left" className="w-3/6 flex flex-col px-3 ">
         {/* title */}
         <div>
-          <p className="text-white text-7xl font-serif py-10">
+          <p className="text-white  sm:text-sm md:text-lg lg:text-5xl font-serif py-10">
             {heroMovie?.title}
           </p>
         </div>
         {/* description */}
         <div>
-          <p className="text-white text-3xl leading-normal">
+          <p className="text-white sm:text-sm md:text-lg lg:text-3xl leading-normal">
             {heroMovie?.overview}
           </p>
         </div>
         {/* buttons */}
         <div className="flex flex-row gap-x-3 pl-1 mt-20">
           <div className="flex flex-row w-auto px-10 h-16 items-center justify-center gap-x-1 rounded-md text-white bg-secondary text-center cursor-pointer">
-            <img className="w-10 h-10" src={start} alt="" />
+            <FaPlay className="mr-2" />
             <button className="text-3xl">Play</button>
           </div>
 
