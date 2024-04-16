@@ -6,10 +6,9 @@ import Navbar from "../components/Navbar";
 const Home = () => {
   return (
     <div className=" bg-primary">
-      <Navbar/>
       <Hero />
-      <Popular/>
-      <Trending/>
+      <Popular />
+      <Trending />
       <Footer />
     </div>
   );
