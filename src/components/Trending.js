@@ -1,5 +1,3 @@
-import dune from "../assets/actor/dune.webp";
-
 import { useSelector } from "react-redux";
 
 const Trending = () => {
