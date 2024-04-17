@@ -3,9 +3,10 @@ import circle from "../assets/actor/circle.png";
 import dune from "../assets/actor/dune.webp";
 import dune2 from "../assets/actor/dunee.jpg";
 import Navbar from "../components/Navbar";
-const Actor = () => {
+
+const Actor = ({actor}) => {
   return (
-    <div className="h-auto bg-primary flex flex-col">
+    <div id="actor" className="h-auto bg-primary flex flex-col">
       <Navbar />
       <div className="flex flex-col lg:flex-row items-center lg:gap-x-20 lg:p-20">
         <div id="left" className="flex flex-col gap-y-5">

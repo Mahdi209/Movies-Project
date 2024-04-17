@@ -20,9 +20,12 @@ export default function Navbar() {
         <div className="flex justify-between items-center cursor-pointer ">
           <div
             id="logo"
-            className="text-secondary text-2xl pl-5  cursor-pointer lg:pr-36"
+            className="text-secondary hidden lg:flex items-center text-2xl pl-5  cursor-pointer lg:pr-36"
           >
-            M&M's
+            <span className="text-secondary text-4xl">m</span>
+            <span className="text-white text-xl">&</span>
+            <span className="text-secondary text-4xl">m</span>
+            <span className="text-white text-xl">'s</span>
           </div>
 
           <ul className="hidden lg:flex justify-between w-[600px] text-2xl">
@@ -33,13 +36,13 @@ export default function Navbar() {
               <Link to="/movies">Movies</Link>
             </li>
             <li className="cursor-pointer  hover:text-secondary hover:scale-110 hover:transition-all">
-              Actors
+              <Link to="/actors">Actors</Link>
             </li>
             <li className="cursor-pointer  hover:text-secondary hover:scale-110 hover:transition-all">
               About
             </li>
             <li className="cursor-pointer  hover:text-secondary hover:scale-110 hover:transition-all">
-              Favorites
+              <Link to="/favorites"> Favorites</Link>
             </li>
           </ul>
         </div>
