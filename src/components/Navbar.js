@@ -33,7 +33,7 @@ export default function Navbar() {
               <Link to="/movies">Movies</Link>
             </li>
             <li className="cursor-pointer  hover:text-secondary hover:scale-110 hover:transition-all">
-              Actors
+            <Link to="/actors">Actors</Link>
             </li>
             <li className="cursor-pointer  hover:text-secondary hover:scale-110 hover:transition-all">
               About

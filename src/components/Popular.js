@@ -2,7 +2,7 @@ import { useSelector } from "react-redux";
 
 const Popular = () => {
   const movies = useSelector((state) => state.popular);
-
+  
   return (
     <div>
       <div>
