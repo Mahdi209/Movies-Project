@@ -14,4 +14,4 @@ const MoviePage = () => {
   );
 };
 
-export default Popular;
+export default MoviePage;

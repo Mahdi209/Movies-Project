@@ -1,10 +1,14 @@
-import { get_Popular, get_Trending, get_Id, get_Actor } from "./actions";
+import {
+  get_Popular,
+  get_Trending,
+  get_Id,
+  get_Actor,
+} from "./actions";
 import { combineReducers } from "redux";
 
 let initialState = {
   popular: [],
   trending: [],
-  search: [],
   id: [],
   actors: [],
 };

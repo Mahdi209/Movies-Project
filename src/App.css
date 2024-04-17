@@ -2,7 +2,16 @@ body {
   background-color: #0f121b;
   color: white;
 }
-
+::-webkit-scrollbar {
+  width: 15px;
+}
+::-webkit-scrollbar-track {
+  background: #6b7280;
+}
+::-webkit-scrollbar-thumb {
+  background: #0f121b;
+  border-radius: 10px;
+}
 #search {
   transform-origin: right;
   animation: open-search 0.5s ease-in-out forwards;
