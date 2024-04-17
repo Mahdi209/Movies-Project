@@ -4,15 +4,15 @@ import dune2 from "../assets/actor/dune.webp";
 const Favorites = () => {
   return (
     <div className="bg-primary ">
-      <div className="flex flex-col gap-20 p-20">
+      <div className="flex flex-col lg:gap-20 mb-10 lg:mb-0 lg:p-20">
       <div>
-        <p className="text-white text-3xl md:text-5xl text-center md:text-left">My Favorites</p>
+        <p className="text-white text-3xl md:text-5xl text-center pb-5 lg:pb-0 md:text-left">My Favorites</p>
       </div>
-      <div className="flex flex-row gap-5 flex-wrap items-center justify-evenly">
-        <img className="w-64 h-72" src={dune} alt="dune" />
-        <img className="w-64 h-72" src={dune2} alt="dune" />
-        <img className="w-64 h-72" src={dune} alt="dune" />
-        <img className="w-64 h-72" src={dune2} alt="dune" />
+      <div className="flex flex-row gap-3 lg:gap-0 flex-wrap items-center justify-evenly">
+        <img className="w-28 lg:w-64 h-44 lg:h-80" src={dune} alt="dune" />
+        <img className="w-28 lg:w-64 h-44 lg:h-80" src={dune2} alt="dune" />
+        <img className="w-28 lg:w-64 h-44 lg:h-80" src={dune} alt="dune" />
+        <img className="w-28 lg:w-64 h-44 lg:h-80" src={dune2} alt="dune" />
       </div>
       </div>
       <Footer/>
