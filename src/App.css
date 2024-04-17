@@ -1,0 +1,30 @@
+body {
+  background-color: #0f121b;
+  color: white;
+}
+
+#search {
+  transform-origin: right;
+  animation: open-search 0.5s ease-in-out forwards;
+}
+@keyframes open-search {
+  0% {
+    transform: scaleX(0);
+  }
+  100% {
+    transform: scaleX(1);
+  }
+}
+#nav-burger {
+  transform-origin: right;
+
+  animation: open-menu 0.5s ease-in-out forwards;
+}
+@keyframes open-menu {
+  0% {
+    transform: scaleX(0);
+  }
+  100% {
+    transform: scaleX(1);
+  }
+}

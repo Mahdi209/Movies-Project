@@ -2,6 +2,7 @@ import { useState } from "react";
 import { FaSearch } from "react-icons/fa";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { IoCloseSharp } from "react-icons/io5";
+import { Link } from "react-router-dom";
 
 export default function Navbar() {
   const [isClick, setIsClick] = useState(false);
@@ -24,12 +25,15 @@ export default function Navbar() {
             M&M's
           </div>
 
-          <ul className="hidden lg:flex justify-between w-96 text-2xl">
+          <ul className="hidden lg:flex justify-between w-[600px] text-2xl">
             <li className="cursor-pointer  hover:text-secondary hover:scale-110 hover:transition-all">
-              Home
+              <Link to="/">Home</Link>
             </li>
             <li className="cursor-pointer  hover:text-secondary hover:scale-110 hover:transition-all">
-              Actors
+              <Link to="/movies">Movies</Link>
+            </li>
+            <li className="cursor-pointer  hover:text-secondary hover:scale-110 hover:transition-all">
+            <Link to="/actors">Actors</Link>
             </li>
             <li className="cursor-pointer  hover:text-secondary hover:scale-110 hover:transition-all">
               About
@@ -80,7 +84,9 @@ export default function Navbar() {
             <li className="flex justify-center items-center  cursor-pointer h-16 w-[350px] hover:bg-gray-900   hover:text-secondary hover:scale-110 hover:transition-all">
               Home
             </li>
-
+            <li className="flex justify-center items-center  cursor-pointer h-16 w-[350px] hover:bg-gray-900   hover:text-secondary hover:scale-110 hover:transition-all">
+              Movies
+            </li>
             <li className="flex justify-center items-center  cursor-pointer h-16 w-[350px] hover:bg-gray-900 hover:text-secondary hover:scale-110 hover:transition-all">
               Actors
             </li>
