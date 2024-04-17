@@ -11,6 +11,7 @@ import Navbar from "./components/Navbar";
 import { Routes, Route } from "react-router-dom";
 import MoviesPage from "./pages/MoviesPage";
 import Actors from "./pages/Actors";
+import Favorites from "./pages/Favorites";
 function App() {
   const dispatch = useDispatch();
 
@@ -27,6 +28,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/movies" element={<MoviesPage />} />
         <Route path="/actors" element={<Actors />} />
+        <Route path="/favorites" element={<Favorites />} />
       </Routes>
     </div>
   );

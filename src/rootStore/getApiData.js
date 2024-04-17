@@ -1,4 +1,4 @@
-import { get_Popular, get_Trending, get_Id, get_Actor } from "./actions";
+import { get_Popular, get_Trending, get_Actor } from "./actions";
 
 export const getPopularData = () => {
   return function (dispatch) {
