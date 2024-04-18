@@ -48,6 +48,7 @@ const MovieCard = ({ movie }) => {
           </div>
         )}
         <img
+          loading="lazy"
           src={`https://image.tmdb.org/t/p/original/${movie.backdrop_path}`}
           alt={movie.title}
           className="w-auto lg:w-auto h-64 bg-gray-200 self-start hover:opacity-55 hover:transition-all"
