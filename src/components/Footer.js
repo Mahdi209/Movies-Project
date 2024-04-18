@@ -29,7 +29,11 @@ const Footer = () => {
             src={instagram}
             alt="instagram"
           />
-          <img className="cursor-pointer w-6 lg:w-10" src={facebook} alt="facebook" />
+          <img
+            className="cursor-pointer w-6 lg:w-10"
+            src={facebook}
+            alt="facebook"
+          />
           <img className="cursor-pointer w-6 lg:w-10" src={x} alt="x" />
         </div>
         <div className="flex justify-center items-center ">
