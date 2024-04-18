@@ -1,11 +1,17 @@
 import { useSelector } from "react-redux";
 import { FaPlay } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
 
 const Hero = () => {
-  const movies = useSelector((state) => state.popular);
+  const navigate = useNavigate();
+  const movies = useSelector((state) => state.popular.popular);
   const heroMovie = movies.filter(
     (movie) => movie.title === "Kung Fu Panda 4"
   )[0];
+
+  const handleGoAnotherPage = () => {
+    navigate(`/movies/${heroMovie.id}`);
+  };
   return (
     <div className="flex flex-col md:flex-row-reverse  gap-x-5 md:px-5">
       <div id="right" className="w-full px-2 lg:px-0">
@@ -30,7 +36,10 @@ const Hero = () => {
         </div>
         {/* buttons */}
         <div className="hidden lg:flex flex-row gap-x-3 pl-1 mt-20">
-          <div className="flex flex-row w-auto px-10 h-16 items-center justify-center gap-x-1 rounded-md text-white bg-secondary text-center cursor-pointer">
+          <div
+            onClick={handleGoAnotherPage}
+            className="flex flex-row w-auto px-10 h-16 items-center justify-center gap-x-1 rounded-md text-white bg-secondary text-center cursor-pointer"
+          >
             <FaPlay className="mr-2" />
             <button className="text-3xl">Play</button>
           </div>

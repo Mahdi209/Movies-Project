@@ -15,7 +15,7 @@ export default function Navbar() {
   };
 
   return (
-    <div className="flex flex-col relative">
+    <div className="flex flex-col relative z-30">
       <nav className="flex justify-between m-5">
         <div className="flex justify-between items-center cursor-pointer ">
           <div
@@ -85,17 +85,17 @@ export default function Navbar() {
           </div>
           <ul className="flex flex-col justify-center items-center text-2xl mb-[600px]   ">
             <li className="flex justify-center items-center  cursor-pointer h-16 w-[350px] hover:bg-gray-900   hover:text-secondary hover:scale-110 hover:transition-all">
-              Home
+              <Link to="/">Home</Link>
             </li>
             <li className="flex justify-center items-center  cursor-pointer h-16 w-[350px] hover:bg-gray-900   hover:text-secondary hover:scale-110 hover:transition-all">
-              Movies
+              <Link to="/movies">Movies</Link>
             </li>
             <li className="flex justify-center items-center  cursor-pointer h-16 w-[350px] hover:bg-gray-900 hover:text-secondary hover:scale-110 hover:transition-all">
-              Actors
+              <Link to="/actors">Actors</Link>
             </li>
 
             <li className="flex justify-center items-center  cursor-pointer h-16 w-[350px] hover:bg-gray-900     hover:text-secondary hover:scale-110 hover:transition-all">
-              About
+              <Link to="/favorites"> Favorites</Link>
             </li>
 
             <li className="flex justify-center items-center  cursor-pointer h-16 w-[350px] hover:bg-gray-900   hover:text-secondary hover:scale-110 hover:transition-all">
