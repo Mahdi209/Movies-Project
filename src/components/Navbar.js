@@ -2,9 +2,11 @@ import { useState } from "react";
 import { FaSearch } from "react-icons/fa";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { IoCloseSharp } from "react-icons/io5";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 export default function Navbar() {
+  const navigate = useNavigate();
+
   const [isClick, setIsClick] = useState(false);
   const [isBurgerOpen, setIsBurgerOpen] = useState(false);
   const handleClick = () => {
@@ -13,14 +15,18 @@ export default function Navbar() {
   const handleBurgerOpen = () => {
     setIsBurgerOpen(!isBurgerOpen);
   };
+  const handleGoAnotherPage = () => {
+    navigate("/");
+  };
 
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col relative z-30">
       <nav className="flex justify-between m-5">
         <div className="flex justify-between items-center cursor-pointer ">
           <div
             id="logo"
-            className="text-secondary hidden lg:flex items-center text-2xl pl-5  cursor-pointer lg:pr-36"
+            className="text-secondary  lg:flex items-center text-2xl pl-5  cursor-pointer lg:pr-36"
+            onClick={handleGoAnotherPage}
           >
             <span className="text-secondary text-4xl">m</span>
             <span className="text-white text-xl">&</span>
@@ -83,23 +89,16 @@ export default function Navbar() {
               className="cursor-pointer text-3xl hover:text-secondary hover:scale-110 hover:transition-all lg:hidden"
             />
           </div>
-          <ul
-            onClick={handleBurgerOpen}
-            className="flex divide-y-2 divide-solid divide-white 
-          flex-col justify-center items-center text-2xl mb-[600px]"
-          >
-            <Link to="/">
-              <li className="flex justify-center items-center  cursor-pointer h-16 w-[350px] hover:bg-gray-900 hover:text-secondary hover:scale-110 hover:transition-all">
-                Home
-              </li>
-            </Link>
-            <li className="flex justify-center items-center  cursor-pointer h-16 w-[350px] hover:bg-gray-900 hover:text-secondary hover:scale-110 hover:transition-all">
+          <ul className="flex flex-col justify-center items-center text-2xl mb-[600px]   ">
+            <li className="flex justify-center items-center  cursor-pointer h-16 w-[350px] hover:bg-gray-900   hover:text-secondary hover:scale-110 hover:transition-all">
+              <Link to="/">Home</Link>
+            </li>
+            <li className="flex justify-center items-center  cursor-pointer h-16 w-[350px] hover:bg-gray-900   hover:text-secondary hover:scale-110 hover:transition-all">
               <Link to="/movies">Movies</Link>
             </li>
             <li className="flex justify-center items-center  cursor-pointer h-16 w-[350px] hover:bg-gray-900 hover:text-secondary hover:scale-110 hover:transition-all">
               <Link to="/actors">Actors</Link>
             </li>
-
             <li className="flex justify-center items-center  cursor-pointer h-16 w-[350px] hover:bg-gray-900 hover:text-secondary hover:scale-110 hover:transition-all">
               <Link to="/favorites"> Favorites</Link>
             </li>

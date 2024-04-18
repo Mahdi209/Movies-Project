@@ -1,16 +1,23 @@
 import { useSelector } from "react-redux";
 import { FaPlay } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
 
 const Hero = () => {
-  const movies = useSelector((state) => state.popular);
+  const navigate = useNavigate();
+  const movies = useSelector((state) => state.popular.popular);
   const heroMovie = movies.filter(
     (movie) => movie.title === "Kung Fu Panda 4"
   )[0];
+
+  const handleGoAnotherPage = () => {
+    navigate(`/movies/${heroMovie.id}`);
+  };
   return (
     <div className="flex flex-col md:flex-row-reverse  gap-x-5 md:px-5">
       <div id="right" className="w-full px-2 lg:px-0">
         <img
-        loading="lazy"
+          onClick={handleGoAnotherPage}
+          loading="lazy"
           className=""
           src={`https://image.tmdb.org/t/p/original/${heroMovie?.backdrop_path}`}
           alt={heroMovie?.title}
@@ -37,7 +44,9 @@ const Hero = () => {
           </div>
 
           <div className="px-10 w-auto h-16 rounded-md hover:opacity-80 text-white bg-gray-500 text-center flex items-center cursor-pointer">
-            <button className="text-3xl w-max">More info</button>
+            <button onClick={handleGoAnotherPage} className="text-3xl w-max">
+              More info
+            </button>
           </div>
         </div>
       </div>
