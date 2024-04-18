@@ -4,6 +4,7 @@ import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { Add_Favorites } from "../rootStore/actions";
 import { FaBookmark } from "react-icons/fa";
+import notification from "../assets/actor/notification.mp3";
 
 const MovieCard = ({ movie }) => {
   const [isHover, SetIsHover] = useState(false);
@@ -13,6 +14,7 @@ const MovieCard = ({ movie }) => {
   const handleGoAnotherPage = () => {
     navigate(`/movies/${movie.id}`);
   };
+  const sound = new Audio(notification);
 
   const handleEnter = () => {
     SetIsHover(true);
@@ -23,6 +25,7 @@ const MovieCard = ({ movie }) => {
   const handleAddFav = () => {
     dispatch({ type: Add_Favorites, payload: movie });
     setIsClicked(!isClicked);
+    sound.play();
   };
 
   return (

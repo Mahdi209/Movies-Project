@@ -2,9 +2,11 @@ import { useState } from "react";
 import { FaSearch } from "react-icons/fa";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { IoCloseSharp } from "react-icons/io5";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 export default function Navbar() {
+  const navigate = useNavigate();
+
   const [isClick, setIsClick] = useState(false);
   const [isBurgerOpen, setIsBurgerOpen] = useState(false);
   const handleClick = () => {
@@ -12,6 +14,9 @@ export default function Navbar() {
   };
   const handleBurgerOpen = () => {
     setIsBurgerOpen(!isBurgerOpen);
+  };
+  const handleGoAnotherPage = () => {
+    navigate("/");
   };
 
   return (
@@ -21,6 +26,7 @@ export default function Navbar() {
           <div
             id="logo"
             className="text-secondary  lg:flex items-center text-2xl pl-5  cursor-pointer lg:pr-36"
+            onClick={handleGoAnotherPage}
           >
             <span className="text-secondary text-4xl">m</span>
             <span className="text-white text-xl">&</span>
