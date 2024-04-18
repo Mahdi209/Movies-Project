@@ -52,16 +52,16 @@ export default function Navbar() {
               <input
                 id="search"
                 type="search"
-                className="w-40 lg:cursor-pointer lg:w-72 h-10 bg-slate-700 focus:bg-slate-600 focus:outline-none rounded-2xl pl-5 "
+                className="w-52 lg:cursor-pointer lg:w-72 h-10 bg-slate-700 focus:bg-slate-600 focus:outline-none rounded-2xl pl-5"
                 placeholder="Search"
               />
             )}
 
             <FaSearch
-              className=" cursor-pointer h-auto w-6 hover:scale-110 hover:transition-all "
+              className=" cursor-pointer h-auto w-6 hover:scale-110 hover:text-secondary hover:transition-all "
               onClick={handleClick}
             />
-            <div className="cursor-pointer bg-secondary items-center rounded-full w-14 h-14"></div>
+            <div className="cursor-pointer hidden lg:flex bg-secondary items-center rounded-full w-14 h-14"></div>
             {isBurgerOpen ? (
               <GiHamburgerMenu
                 onClick={handleBurgerOpen}
@@ -75,9 +75,9 @@ export default function Navbar() {
       {isBurgerOpen ? null : (
         <div
           id="nav-burger"
-          className="absolute  flex flex-col  w-96 bg-slate-800  h-screen justify-around items-center self-end lg:hidden"
+          className="fixed  opacity-90 z-10 flex flex-col w-96 bg-slate-800 h-screen justify-around items-center self-end lg:hidden"
         >
-          <div className="mt-3 mb-72 mr-80">
+          <div className="mt-3 mb-10 ml-80">
             <IoCloseSharp
               onClick={handleBurgerOpen}
               className="cursor-pointer text-3xl hover:text-secondary hover:scale-110 hover:transition-all lg:hidden"
@@ -98,8 +98,8 @@ export default function Navbar() {
               <Link to="/favorites"> Favorites</Link>
             </li>
 
-            <li className="flex justify-center items-center  cursor-pointer h-16 w-[350px] hover:bg-gray-900   hover:text-secondary hover:scale-110 hover:transition-all">
-              Favorites
+            <li className="flex justify-center items-center  cursor-pointer h-16 w-[350px] hover:bg-gray-900 hover:text-secondary hover:scale-110 hover:transition-all">
+              <Link to="/favorites"> Favorites</Link>
             </li>
           </ul>
         </div>

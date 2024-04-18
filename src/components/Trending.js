@@ -9,7 +9,7 @@ const Trending = () => {
   const trending = useSelector((state) => state.trending.trending);
 
   return (
-    <div className="pt-20">
+    <div className="lg:pt-20 pb-5 lg:pb-0">
       <div>
         <div>
           <p className="text-white p-3 md:pb-10 md:text-6xl">Top rated</p>

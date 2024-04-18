@@ -4,6 +4,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { getAllMovieData } from "../rootStore/getApiData";
 import MovieCard from "../components/MovieCard";
 
+import Footer from "../components/Footer";
+
 export default function MoviesPage() {
   const dispatch = useDispatch();
   const movies = useSelector((state) => state.allMovies.allMovies);
@@ -21,7 +23,9 @@ export default function MoviesPage() {
   return (
     <div>
       <div>
-        <p className="text-white text-7xl pl-12 pb-12 pt-12">Movies</p>
+        <p className="text-white hidden lg:flex text-7xl pl-12 pb-12 pt-12">
+          Movies
+        </p>
         <div className="flex flex-wrap justify-center items-center content-center gap-10 pb-12">
           {movies?.map((movie) => (
             <MovieCard key={movie.id} movie={movie} />
@@ -29,6 +33,7 @@ export default function MoviesPage() {
         </div>
         <button onClick={handleAdd}>More</button>
       </div>
+      <Footer />
     </div>
   );
 }
