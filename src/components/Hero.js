@@ -16,6 +16,7 @@ const Hero = () => {
     <div className="flex flex-col md:flex-row-reverse  gap-x-5 md:px-5">
       <div id="right" className="w-full px-2 lg:px-0">
         <img
+          onClick={handleGoAnotherPage}
           loading="lazy"
           className=""
           src={`https://image.tmdb.org/t/p/original/${heroMovie?.backdrop_path}`}

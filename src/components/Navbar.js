@@ -20,7 +20,7 @@ export default function Navbar() {
         <div className="flex justify-between items-center cursor-pointer ">
           <div
             id="logo"
-            className="text-secondary hidden lg:flex items-center text-2xl pl-5  cursor-pointer lg:pr-36"
+            className="text-secondary  lg:flex items-center text-2xl pl-5  cursor-pointer lg:pr-36"
           >
             <span className="text-secondary text-4xl">m</span>
             <span className="text-white text-xl">&</span>

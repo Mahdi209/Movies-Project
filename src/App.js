@@ -15,6 +15,7 @@ import Movie from "./pages/Movie";
 
 import Actors from "./pages/Actors";
 import Favorites from "./pages/Favorites";
+import Footer from "./components/Footer";
 function App() {
   const dispatch = useDispatch();
 
@@ -34,6 +35,7 @@ function App() {
         <Route path="/actors" element={<Actors />} />
         <Route path="/favorites" element={<Favorites />} />
       </Routes>
+      <Footer />
     </div>
   );
 }

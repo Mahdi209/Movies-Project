@@ -26,7 +26,7 @@ const MovieCard = ({ movie }) => {
   };
 
   return (
-    <div className="flex flex-col justify-between items-center h-80">
+    <div className="flex flex-col  justify-between items-center h-80">
       <div className="relative flex justify-center items-center w-28 h-72 lg:w-96">
         {isHover && (
           <div className="flex justify-center items-center absolute inset-0">

@@ -67,6 +67,26 @@ const Movie = () => {
             <BsYoutube className="w-auto h-7 ml-3" />
           </span>
         </a>
+        <div className="flex ">
+          <span className="bg-slate-400 rounded-lg w-36 flex  justify-center items-center mr-2">
+            original Language:
+          </span>
+          {movie.original_language}
+        </div>
+        <div className="flex gap-x-5 ">
+          <div className="flex text-yellow-400 ">
+            <span className="bg-slate-400 rounded-lg w-36 flex text-white justify-center items-center mr-2">
+              vote average:
+            </span>
+            {movie.vote_average.toFixed(1)}%
+          </div>
+          <div className="flex ">
+            <span className="bg-slate-400 rounded-lg w-24 flex  justify-center items-center mr-2">
+              vote count
+            </span>
+            {movie.vote_count}
+          </div>
+        </div>
       </div>
       <img
         src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`}

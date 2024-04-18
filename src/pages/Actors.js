@@ -13,19 +13,20 @@ const Actors = () => {
           >
             <div className=" w-20 md:w-32 lg:w-40">
               <img
-              loading="lazy"
+                loading="lazy"
                 className="w-full h-full rounded-xl hover:opacity-55 hover:transition-all"
                 src={`https://image.tmdb.org/t/p/original/${actor.profile_path}`}
                 alt=""
               />
             </div>
             <div>
-              <p className="text-white text-center text-xs md:text-sm lg:text-base">{actor.name}</p>
+              <p className="text-white text-center text-xs md:text-sm lg:text-base">
+                {actor.name}
+              </p>
             </div>
           </div>
         ))}
       </div>
-      <Footer />
     </div>
   );
 };
