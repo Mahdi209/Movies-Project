@@ -1,10 +1,12 @@
 import { useSelector } from "react-redux";
 import Footer from "../components/Footer";
+import Navbar from "../components/Navbar";
 export default function MoviesPage() {
   const movies = useSelector((state) => state.popular);
 
   return (
     <div>
+      <Navbar/>
       <div>
         <p className="text-white hidden lg:flex text-7xl pl-12 pb-12 pt-12">Movies</p>
         <div className="flex flex-wrap justify-center items-center content-center gap-10 pb-12">

@@ -39,10 +39,10 @@ export default function Navbar() {
               <Link to="/actors">Actors</Link>
             </li>
             <li className="cursor-pointer  hover:text-secondary hover:scale-110 hover:transition-all">
-              About
+              <Link to="/favorites"> Favorites</Link>
             </li>
             <li className="cursor-pointer  hover:text-secondary hover:scale-110 hover:transition-all">
-              <Link to="/favorites"> Favorites</Link>
+              <Link to="/about"> About</Link>
             </li>
           </ul>
         </div>
@@ -83,26 +83,29 @@ export default function Navbar() {
               className="cursor-pointer text-3xl hover:text-secondary hover:scale-110 hover:transition-all lg:hidden"
             />
           </div>
-          <ul onClick={handleBurgerOpen} className="flex divide-y-2 divide-solid divide-white 
-          flex-col justify-center items-center text-2xl mb-[600px]">
+          <ul
+            onClick={handleBurgerOpen}
+            className="flex divide-y-2 divide-solid divide-white 
+          flex-col justify-center items-center text-2xl mb-[600px]"
+          >
             <Link to="/">
-            <li className="flex justify-center items-center  cursor-pointer h-16 w-[350px] hover:bg-gray-900 hover:text-secondary hover:scale-110 hover:transition-all">
-             Home 
-            </li>
+              <li className="flex justify-center items-center  cursor-pointer h-16 w-[350px] hover:bg-gray-900 hover:text-secondary hover:scale-110 hover:transition-all">
+                Home
+              </li>
             </Link>
             <li className="flex justify-center items-center  cursor-pointer h-16 w-[350px] hover:bg-gray-900 hover:text-secondary hover:scale-110 hover:transition-all">
-              <Link to="/movies">Movies</Link> 
+              <Link to="/movies">Movies</Link>
             </li>
             <li className="flex justify-center items-center  cursor-pointer h-16 w-[350px] hover:bg-gray-900 hover:text-secondary hover:scale-110 hover:transition-all">
-            <Link to="/actors">Actors</Link>
-            </li>
-
-            <li className="flex justify-center items-center  cursor-pointer h-16 w-[350px] hover:bg-gray-900 hover:text-secondary hover:scale-110 hover:transition-all">
-              About
+              <Link to="/actors">Actors</Link>
             </li>
 
             <li className="flex justify-center items-center  cursor-pointer h-16 w-[350px] hover:bg-gray-900 hover:text-secondary hover:scale-110 hover:transition-all">
-            <Link to="/favorites"> Favorites</Link>
+              <Link to="/favorites"> Favorites</Link>
+            </li>
+
+            <li className="flex justify-center items-center  cursor-pointer h-16 w-[350px] hover:bg-gray-900 hover:text-secondary hover:scale-110 hover:transition-all">
+              <Link to="/about"> About</Link>
             </li>
           </ul>
         </div>

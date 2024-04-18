@@ -1,9 +1,11 @@
 import Footer from "../components/Footer";
 import dune from "../assets/actor/dunee.jpg";
 import dune2 from "../assets/actor/dune.webp";
+import Navbar from "../components/Navbar";
 const Favorites = () => {
   return (
     <div className="bg-primary ">
+      <Navbar/>
       <div className="flex flex-col lg:gap-20 mb-10 lg:mb-0 lg:p-20">
       <div>
         <p className="text-white text-3xl md:text-5xl text-center pb-5 lg:pb-0 md:text-left">My Favorites</p>

@@ -1,16 +1,12 @@
-import {
-  get_Popular,
-  get_Trending,
-  get_Id,
-  get_Actor,
-} from "./actions";
+import { get_Popular, get_Trending, get_Actor } from "./actions";
 import { combineReducers } from "redux";
 
 let initialState = {
   popular: [],
   trending: [],
-  id: [],
+  movies: [],
   actors: [],
+  loading: false,
 };
 
 export const popularReducer = (state = initialState.popular, action) => {
@@ -19,8 +15,9 @@ export const popularReducer = (state = initialState.popular, action) => {
       return action.payload;
 
     default:
-      return state;
+      break;
   }
+  return state;
 };
 export const trendingReducer = (state = initialState.trending, action) => {
   switch (action.type) {
@@ -28,22 +25,19 @@ export const trendingReducer = (state = initialState.trending, action) => {
       return action.payload;
 
     default:
-      return state;
+      break;
   }
+  return state;
 };
-export const idReducer = (state = initialState.id, action) => {
-  switch (action.type) {
-    case get_Id:
-      return action.payload;
 
-    default:
-      return state;
-  }
-};
 export const actorReducer = (state = initialState, action) => {
+  console.log("🚀 ~ actorReducer ~ state:", state);
   switch (action.type) {
     case get_Actor:
-      return { ...state, actors: action.payload };
+      return { ...state, actors: action.payload, loading: false };
+
+    case "actor/loading":
+      return { ...state, loading: true };
 
     default:
       break;
@@ -54,7 +48,6 @@ export const actorReducer = (state = initialState, action) => {
 const rootReducer = combineReducers({
   popular: popularReducer,
   trending: trendingReducer,
-  id: idReducer,
   actors: actorReducer,
 });
 

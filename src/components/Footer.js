@@ -21,7 +21,9 @@ const Footer = () => {
           <span className="cursor-pointer hover:text-secondary">
             <Link to="/movies">Movies</Link>
           </span>
-          <span className="cursor-pointer hover:text-secondary">About</span>
+          <span className="cursor-pointer hover:text-secondary">
+            <Link to="/about"> About</Link>
+          </span>
         </div>
         <div className="flex flex-row gap-x-10 md:gap-x-32 items-center md:my-4">
           <img
@@ -29,7 +31,11 @@ const Footer = () => {
             src={instagram}
             alt="instagram"
           />
-          <img className="cursor-pointer w-6 lg:w-10" src={facebook} alt="facebook" />
+          <img
+            className="cursor-pointer w-6 lg:w-10"
+            src={facebook}
+            alt="facebook"
+          />
           <img className="cursor-pointer w-6 lg:w-10" src={x} alt="x" />
         </div>
         <div className="flex justify-center items-center ">

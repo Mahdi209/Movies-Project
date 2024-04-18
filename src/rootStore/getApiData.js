@@ -24,6 +24,7 @@ export const getTrendingData = () => {
 };
 export const getActors = () => {
   return function (dispatch) {
+    dispatch({ type: "actor/loading" });
     fetch(
       "https://api.themoviedb.org/3/person/popular?&page=1&api_key=aee80312b2fadfe6904aa67a5d15bcf6"
     )
