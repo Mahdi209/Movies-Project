@@ -75,7 +75,7 @@ export default function Navbar() {
       {isBurgerOpen ? null : (
         <div
           id="nav-burger"
-          className="fixed  opacity-90 z-10 flex flex-col w-96 bg-slate-800 h-screen justify-around items-center self-end lg:hidden"
+          className="fixed opacity-90 z-10 flex flex-col w-96 bg-slate-800 h-screen justify-around items-center self-end lg:hidden"
         >
           <div className="mt-3 mb-10 ml-80">
             <IoCloseSharp
@@ -83,18 +83,21 @@ export default function Navbar() {
               className="cursor-pointer text-3xl hover:text-secondary hover:scale-110 hover:transition-all lg:hidden"
             />
           </div>
-          <ul onClick={handleBurgerOpen} className="flex divide-y-2 divide-solid divide-white 
-          flex-col justify-center items-center text-2xl mb-[600px]">
+          <ul
+            onClick={handleBurgerOpen}
+            className="flex divide-y-2 divide-solid divide-white 
+          flex-col justify-center items-center text-2xl mb-[600px]"
+          >
             <Link to="/">
-            <li className="flex justify-center items-center  cursor-pointer h-16 w-[350px] hover:bg-gray-900 hover:text-secondary hover:scale-110 hover:transition-all">
-             Home 
-            </li>
+              <li className="flex justify-center items-center  cursor-pointer h-16 w-[350px] hover:bg-gray-900 hover:text-secondary hover:scale-110 hover:transition-all">
+                Home
+              </li>
             </Link>
             <li className="flex justify-center items-center  cursor-pointer h-16 w-[350px] hover:bg-gray-900 hover:text-secondary hover:scale-110 hover:transition-all">
-              <Link to="/movies">Movies</Link> 
+              <Link to="/movies">Movies</Link>
             </li>
             <li className="flex justify-center items-center  cursor-pointer h-16 w-[350px] hover:bg-gray-900 hover:text-secondary hover:scale-110 hover:transition-all">
-            <Link to="/actors">Actors</Link>
+              <Link to="/actors">Actors</Link>
             </li>
 
             <li className="flex justify-center items-center  cursor-pointer h-16 w-[350px] hover:bg-gray-900 hover:text-secondary hover:scale-110 hover:transition-all">
@@ -102,7 +105,7 @@ export default function Navbar() {
             </li>
 
             <li className="flex justify-center items-center  cursor-pointer h-16 w-[350px] hover:bg-gray-900 hover:text-secondary hover:scale-110 hover:transition-all">
-            <Link to="/favorites"> Favorites</Link>
+              <Link to="/favorites"> Favorites</Link>
             </li>
           </ul>
         </div>
